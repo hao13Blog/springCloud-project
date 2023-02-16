@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: orderservice
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        file-extension: yaml
+        namespace: d7ad2dca-6041-46eb-8467-82577d4b41ed
+logging:
+  level:
+    com.lh.orderservice.*: debug
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: full
+  httpclient:
+    enabled: true  # 开启feign对httpClient的支持
+    max-connections: 300  # 最大连接数
+    max-connections-per-route: 60  #每个路径的最大连接数

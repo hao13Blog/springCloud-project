@@ -1,0 +1,17 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: eurekaservice  # eureka的服务名称
+
+# server:
+#   enable-self-preservation: false  # 关闭保护模式
+
+# 服务注册
+eureka:
+  client:
+    service-url: # eureka 地址
+      defaultZone: http://127.0.0.1:8083/eureka
+    fetch-registry: false
+    register-with-eureka: false # 指定是否要注册到注册中心（注册中心不需要开启）
